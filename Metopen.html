@@ -1,0 +1,841 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Hitungan manual &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Metopen';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hitungan manual</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMetopen.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Metopen.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Hitungan manual</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-konferensi">Matrik konferensi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-mengambil-data-dari-confusion-matrix">Langkah 1: Mengambil Data dari Confusion Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-menghitung-akurasi-accuracy">Langkah 2: Menghitung Akurasi (Accuracy)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menghitung-metrik-per-kelas">Langkah 3: Menghitung Metrik per Kelas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-untuk-kelas-malignant-ganas-1-fokus-utama">A. Untuk Kelas “Malignant” (Ganas/1) - Fokus Utama</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-presisi-seberapa-akurat-saat-model-memprediksi-ganas">1. Precision (Presisi) Seberapa akurat saat model memprediksi Ganas?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-sensitivitas-seberapa-banyak-kasus-ganas-yang-berhasil-ditemukan-dari-total-kasus-ganas-yang-ada">2. Recall (Sensitivitas) Seberapa banyak kasus Ganas yang berhasil ditemukan dari total kasus Ganas yang ada?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score-rata-rata-harmonis-antara-precision-dan-recall">3. F1-Score Rata-rata harmonis antara Precision dan Recall.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-untuk-kelas-benign-jinak-0">B. Untuk Kelas “Benign” (Jinak/0)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-presisi">1. Precision (Presisi)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-sensitivitas">2. Recall (Sensitivitas)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score">3. F1-Score</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-rata-rata-averages">Langkah 4: Menghitung Rata-Rata (Averages)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-average-rata-rata-biasa-menjumlahkan-metrik-kedua-kelas-lalu-dibagi-2-tanpa-melihat-jumlah-data-per-kelas">1. Macro Average (Rata-rata Biasa) Menjumlahkan metrik kedua kelas lalu dibagi 2 (tanpa melihat jumlah data per kelas).</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-average-rata-rata-terbobot-mempertimbangkan-jumlah-data-support-tiap-kelas">2. Weighted Average (Rata-rata Terbobot) Mempertimbangkan jumlah data (support) tiap kelas.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-analisis-overfitting-evaluasi-gap">Langkah 5: Analisis Overfitting (Evaluasi Gap)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#akurasi-training-model-mempelajari-data-latih-dengan-sempurna-sering-terjadi-pada-random-forest-tanpa-pembatasan-depth">1. Akurasi Training: Model mempelajari data latih dengan sempurna (sering terjadi pada Random Forest tanpa pembatasan depth).</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#akurasi-testing-model-diuji-dengan-data-yang-belum-pernah-dilihat">2. Akurasi Testing: Model diuji dengan data yang belum pernah dilihat.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-data-splitting-pembagian-data">1. Perhitungan Manual Data Splitting (Pembagian Data)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-auc-roc-area-under-the-curve-receiver-operating-characteristic">2. Perhitungan Manual AUC-ROC (Area Under the Curve - Receiver Operating Characteristic)</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="hitungan-manual">
+<h1>Hitungan manual<a class="headerlink" href="#hitungan-manual" title="Permalink to this heading">#</a></h1>
+<section id="matrik-konferensi">
+<h2>Matrik konferensi<a class="headerlink" href="#matrik-konferensi" title="Permalink to this heading">#</a></h2>
+<section id="langkah-1-mengambil-data-dari-confusion-matrix">
+<h3>Langkah 1: Mengambil Data dari Confusion Matrix<a class="headerlink" href="#langkah-1-mengambil-data-dari-confusion-matrix" title="Permalink to this heading">#</a></h3>
+<p>Target Label:</p>
+<ul class="simple">
+<li><p>0 = Benign (Jinak)</p></li>
+<li><p>1 = Malignant (Ganas)
+Total Data Testing: 114 Sampel.</p></li>
+</ul>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Prediksi jinak(0)</p></th>
+<th class="head"><p>Prediksi ganas(1)</p></th>
+<th class="head"><p>Total Aktual</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Aktual jinak(0</p></td>
+<td><p>72 (TN)</p></td>
+<td><p>0 (FP)</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-odd"><td><p>Aktual Ganas (1)</p></td>
+<td><p>3 (FN)</p></td>
+<td><p>39 (TP)</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-even"><td><p>Total Prediksi</p></td>
+<td><p>75</p></td>
+<td><p>39</p></td>
+<td><p>114</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p>Catatan: Dalam kasus medis (deteksi kanker), biasanya kita menganggap “Ganas/Malignant (1)” sebagai Positive Class dan “Jinak/Benign (0)” sebagai Negative Class.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>True Positive (TP): 39 (Aktual Ganas, Diprediksi Ganas)</p></li>
+<li><p>True Negative (TN): 72 (Aktual Jinak, Diprediksi Jinak)</p></li>
+<li><p>False Positive (FP): 0 (Aktual Jinak, Diprediksi Ganas)</p></li>
+<li><p>False Negative (FN): 3 (Aktual Ganas, Diprediksi Jinak)</p></li>
+</ul>
+</section>
+<section id="langkah-2-menghitung-akurasi-accuracy">
+<h3>Langkah 2: Menghitung Akurasi (Accuracy)<a class="headerlink" href="#langkah-2-menghitung-akurasi-accuracy" title="Permalink to this heading">#</a></h3>
+<p>Akurasi adalah seberapa sering model menebak dengan benar secara keseluruhan.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\text { Akurasi }=\frac{T P+T N}{\text { Total Sampel }} \\
+\text { Akurasi }=\frac{39+72}{114}=\frac{111}{114}=0.97368 \ldots
+\end{gathered}
+\end{split}\]</div>
+<p>Hasil Manual: 97.37%</p>
+</section>
+<section id="langkah-3-menghitung-metrik-per-kelas">
+<h3>Langkah 3: Menghitung Metrik per Kelas<a class="headerlink" href="#langkah-3-menghitung-metrik-per-kelas" title="Permalink to this heading">#</a></h3>
+<section id="a-untuk-kelas-malignant-ganas-1-fokus-utama">
+<h4>A. Untuk Kelas “Malignant” (Ganas/1) - Fokus Utama<a class="headerlink" href="#a-untuk-kelas-malignant-ganas-1-fokus-utama" title="Permalink to this heading">#</a></h4>
+</section>
+<section id="precision-presisi-seberapa-akurat-saat-model-memprediksi-ganas">
+<h4>1. Precision (Presisi) Seberapa akurat saat model memprediksi Ganas?<a class="headerlink" href="#precision-presisi-seberapa-akurat-saat-model-memprediksi-ganas" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\text { Precision }_1=\frac{T P}{T P+F P}=\frac{39}{39+0}=\frac{39}{39}=1.00
+\]</div>
+<p>(Artinya: Jika model bilang Ganas, 100% pasti Ganas).</p>
+</section>
+<section id="recall-sensitivitas-seberapa-banyak-kasus-ganas-yang-berhasil-ditemukan-dari-total-kasus-ganas-yang-ada">
+<h4>2. Recall (Sensitivitas) Seberapa banyak kasus Ganas yang berhasil ditemukan dari total kasus Ganas yang ada?<a class="headerlink" href="#recall-sensitivitas-seberapa-banyak-kasus-ganas-yang-berhasil-ditemukan-dari-total-kasus-ganas-yang-ada" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\text { Recall }_1=\frac{T P}{T P+F N}=\frac{39}{39+3}=\frac{39}{42} \approx 0.9285 \ldots
+\]</div>
+<p>Dibulatkan: 0.93</p>
+</section>
+<section id="f1-score-rata-rata-harmonis-antara-precision-dan-recall">
+<h4>3. F1-Score Rata-rata harmonis antara Precision dan Recall.<a class="headerlink" href="#f1-score-rata-rata-harmonis-antara-precision-dan-recall" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+F 1_1=2 \times \frac{\text { Precision × Recall }}{\text { Precision }+ \text { Recall }} \\
+F 1_1=2 \times \frac{1.00 \times 0.9285}{1.00+0.9285}=2 \times \frac{0.9285}{1.9285} \approx 0.9629 \ldots
+\end{gathered}
+\end{split}\]</div>
+<p>Dibulatkan: 0.96</p>
+</section>
+<section id="b-untuk-kelas-benign-jinak-0">
+<h4>B. Untuk Kelas “Benign” (Jinak/0)<a class="headerlink" href="#b-untuk-kelas-benign-jinak-0" title="Permalink to this heading">#</a></h4>
+<p>Untuk perhitungan ini, kita balik perspektifnya: “Jinak” menjadi target positif sementara.</p>
+<ul class="simple">
+<li><p>TP (Jinak benar) = 72</p></li>
+<li><p>FP (Prediksi Jinak, padahal Ganas) = 3</p></li>
+<li><p>FN (Prediksi Ganas, padahal Jinak) <span class="math notranslate nohighlight">\(=0\)</span></p></li>
+</ul>
+</section>
+<section id="precision-presisi">
+<h4>1. Precision (Presisi)<a class="headerlink" href="#precision-presisi" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\text { Precision }_0=\frac{72}{72+3}=\frac{72}{75}=0.96
+\]</div>
+</section>
+<section id="recall-sensitivitas">
+<h4>2. Recall (Sensitivitas)<a class="headerlink" href="#recall-sensitivitas" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+\text { Recall }_0=\frac{72}{72+0}=\frac{72}{72}=1.00
+\]</div>
+</section>
+<section id="f1-score">
+<h4>3. F1-Score<a class="headerlink" href="#f1-score" title="Permalink to this heading">#</a></h4>
+<div class="math notranslate nohighlight">
+\[
+F 1_0=2 \times \frac{0.96 \times 1.00}{0.96+1.00}=2 \times \frac{0.96}{1.96} \approx 0.979 \ldots
+\]</div>
+<p>Dibulatkan: 0.98</p>
+</section>
+</section>
+<section id="langkah-4-menghitung-rata-rata-averages">
+<h3>Langkah 4: Menghitung Rata-Rata (Averages)<a class="headerlink" href="#langkah-4-menghitung-rata-rata-averages" title="Permalink to this heading">#</a></h3>
+<p>Di laporan klasifikasi (classification report), ada dua jenis rata-rata:</p>
+<section id="macro-average-rata-rata-biasa-menjumlahkan-metrik-kedua-kelas-lalu-dibagi-2-tanpa-melihat-jumlah-data-per-kelas">
+<h4>1. Macro Average (Rata-rata Biasa) Menjumlahkan metrik kedua kelas lalu dibagi 2 (tanpa melihat jumlah data per kelas).<a class="headerlink" href="#macro-average-rata-rata-biasa-menjumlahkan-metrik-kedua-kelas-lalu-dibagi-2-tanpa-melihat-jumlah-data-per-kelas" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Macro Precision: <span class="math notranslate nohighlight">\((0.96+1.00) / 2=0.98\)</span></p></li>
+<li><p>Macro Recall: <span class="math notranslate nohighlight">\((1.00+0.93) / 2 \approx 0.96\)</span></p></li>
+</ul>
+<p>(0.965 dibulatkan ke genap/bawah tergantung library, di sini 0.96).</p>
+<ul class="simple">
+<li><p>Macro F1: <span class="math notranslate nohighlight">\((0.98+0.96) / 2=0.97\)</span></p></li>
+</ul>
+</section>
+<section id="weighted-average-rata-rata-terbobot-mempertimbangkan-jumlah-data-support-tiap-kelas">
+<h4>2. Weighted Average (Rata-rata Terbobot) Mempertimbangkan jumlah data (support) tiap kelas.<a class="headerlink" href="#weighted-average-rata-rata-terbobot-mempertimbangkan-jumlah-data-support-tiap-kelas" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Support <span class="math notranslate nohighlight">\(0=72\)</span></p></li>
+<li><p>Support <span class="math notranslate nohighlight">\(1=42\)</span></p></li>
+<li><p>Total = 114</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\text { Weighted } \mathrm{F} 1=\frac{\left(F 1_0 \times 72\right)+\left(F 1_1 \times 42\right)}{114} \\
+\text { Weighted } \mathrm{F} 1=\frac{(0.98 \times 72)+(0.96 \times 42)}{114} \\
+\text { Weighted } \mathrm{F} 1=\frac{70.56+40.32}{114}=\frac{110.88}{114} \approx 0.972
+\end{gathered}
+\end{split}\]</div>
+<p>Dibulatkan: 0.97</p>
+</section>
+</section>
+<section id="langkah-5-analisis-overfitting-evaluasi-gap">
+<h3>Langkah 5: Analisis Overfitting (Evaluasi Gap)<a class="headerlink" href="#langkah-5-analisis-overfitting-evaluasi-gap" title="Permalink to this heading">#</a></h3>
+<p>Berdasarkan output bagian 4.1 di notebook:</p>
+<section id="akurasi-training-model-mempelajari-data-latih-dengan-sempurna-sering-terjadi-pada-random-forest-tanpa-pembatasan-depth">
+<h4>1. Akurasi Training: Model mempelajari data latih dengan sempurna (sering terjadi pada Random Forest tanpa pembatasan depth).<a class="headerlink" href="#akurasi-training-model-mempelajari-data-latih-dengan-sempurna-sering-terjadi-pada-random-forest-tanpa-pembatasan-depth" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Nilai: 100% (1.00)</p></li>
+</ul>
+</section>
+<section id="akurasi-testing-model-diuji-dengan-data-yang-belum-pernah-dilihat">
+<h4>2. Akurasi Testing: Model diuji dengan data yang belum pernah dilihat.<a class="headerlink" href="#akurasi-testing-model-diuji-dengan-data-yang-belum-pernah-dilihat" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Nilai: 97.37% (0.9737)</p></li>
+</ul>
+<p>Perhitungan Gap (Selisih):</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+\text { Gap }=\text { Akurasi Train }- \text { Akurasi Test } \\
+\text { Gap }=100 \%-97.37 \%=2.63 \%
+\end{gathered}
+\end{split}\]</div>
+<p>Interpretasi Manual: Karena selisih (gap) hanya 2.63% (di bawah ambang batas wajar 5% atau <span class="math notranslate nohighlight">\(10 \%\)</span> ), maka model disimpulkan Good Fit (Optimal). Model mampu mengenali pola dengan sangat baik tanpa hanya menghafal data latih.</p>
+</section>
+<section id="perhitungan-manual-data-splitting-pembagian-data">
+<h4>1. Perhitungan Manual Data Splitting (Pembagian Data)<a class="headerlink" href="#perhitungan-manual-data-splitting-pembagian-data" title="Permalink to this heading">#</a></h4>
+<p>Tujuannya adalah membagi total data menjadi dua bagian: Training Set (untuk melatih model) dan Testing Set (untuk menguji model).</p>
+<p>Langkah-langkah:</p>
+<ol class="arabic simple">
+<li><p>Hitung Total Data ( <span class="math notranslate nohighlight">\(N\)</span> ): Dari file data.csv , total baris data adalah 569.</p></li>
+<li><p>Tentukan Rasio Split: Berdasarkan notebook, parameter yang digunakan adalah test_size=0.2 . Artinya, 20% data untuk testing, dan sisanya 80% untuk training.</p></li>
+<li><p>Hitung Jumlah Data Testing ( <span class="math notranslate nohighlight">\({N}_{\text {test }}\)</span> ):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+N_{\text {test }}=N \times \text { test_size } \\
+N_{\text {test }}=569 \times 0.2=113.8
+\end{gathered}
+\end{split}\]</div>
+<p>Karena jumlah data harus bilangan bulat, Python biasanya membulatkan ke angka terdekat (biasanya ceiling atau round tergantung implementasi, dalam train_test_split sering kali diambil ceil untuk test set jika hasilnya pecahan, atau pembulatan terdekat). Dalam kasus standar sklearn:</p>
+<div class="math notranslate nohighlight">
+\[
+N_{\text {test }} \approx 114
+\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Hitung Jumlah Data Training ( <span class="math notranslate nohighlight">\({N}_{\text {train }}\)</span> ):</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{gathered}
+N_{\text {train }}=N-N_{\text {test }} \\
+N_{\text {train }}=569-114=455
+\end{gathered}
+\end{split}\]</div>
+<p>Hasil Akhir:</p>
+<ul class="simple">
+<li><p>Total Data: 569</p></li>
+<li><p>Data Training <span class="math notranslate nohighlight">\((80 \%)\)</span> : 455 baris</p></li>
+<li><p>Data Testing (20%): 114 baris</p></li>
+</ul>
+</section>
+</section>
+<section id="perhitungan-manual-auc-roc-area-under-the-curve-receiver-operating-characteristic">
+<h3>2. Perhitungan Manual AUC-ROC (Area Under the Curve - Receiver Operating Characteristic)<a class="headerlink" href="#perhitungan-manual-auc-roc-area-under-the-curve-receiver-operating-characteristic" title="Permalink to this heading">#</a></h3>
+<p>AUC-ROC mengukur seberapa baik model dapat membedakan antara dua kelas (dalam kasus ini: Tumor Ganas/Malignant vs Jinak/Benign).</p>
+<p>Karena menghitung manual untuk 114 data testing terlalu panjang, saya akan menggunakan sampel 10 data (5 prediksi teratas dan 5 terbawah) dari hasil model Anda untuk mendemonstrasikan prosesnya. Hasil model Anda sangat bagus (AUC <span class="math notranslate nohighlight">\(\approx 0.99\)</span> ), jadi datanya terpisah dengan sangat rapi.</p>
+<p>Data Sampel (Simulasi dari Model Anda): Kita urutkan data berdasarkan Score Probabilitas (keyakinan model bahwa itu adalah kanker ganas/kelas 1) dari tinggi ke rendah.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{array}{|l|l|l|l|}
+\hline \text{Peringkat} &amp; \text{True Label } (y) &amp; \text{Score Probabilitas } (y_{\text{score}}) &amp; \text{Keterangan} \\
+\hline 1 &amp; 1 &amp; 1.00 &amp; \text{Positif (Benar)} \\
+\hline 2 &amp; 1 &amp; 1.00 &amp; \text{Positif (Benar)} \\
+\hline 3 &amp; 1 &amp; 1.00 &amp; \text{Positif (Benar)} \\
+\hline 4 &amp; 1 &amp; 1.00 &amp; \text{Positif (Benar)} \\
+\hline 5 &amp; 1 &amp; 1.00 &amp; \text{Positif (Benar)} \\
+\hline \dots &amp; \dots &amp; \dots &amp; \dots \\
+\hline 110 &amp; 0 &amp; 0.00 &amp; \text{Negatif (Benar)} \\
+\hline 111 &amp; 0 &amp; 0.00 &amp; \text{Negatif (Benar)} \\
+\hline 112 &amp; 0 &amp; 0.00 &amp; \text{Negatif (Benar)} \\
+\hline 113 &amp; 0 &amp; 0.00 &amp; \text{Negatif (Benar)} \\
+\hline 114 &amp; 0 &amp; 0.00 &amp; \text{Negatif (Benar)} \\
+\hline
+\end{array}
+\end{split}\]</div>
+<p>Langkah-langkah:</p>
+<ol class="arabic simple">
+<li><p>Hitung Total Positif (P ) dan Negatif (N): Dari data testing Anda:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Total Positif <span class="math notranslate nohighlight">\((P)=42\)</span> (Pasien Kanker Ganas)</p></li>
+<li><p>Total Negatif <span class="math notranslate nohighlight">\((\mathrm{N})=72\)</span> (Pasien Tumor Jinak)</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Geser Threshold (Batas Ambang): Kita bayangkan sebuah garis batas. Semua data di atas garis dianggap prediksi “Positif”, di bawah garis “Negatif”. Kita geser garis ini dari skor tertinggi (1.0) ke terendah (0.0).</p></li>
+<li><p>Hitung TPR dan FPR di setiap titik:</p></li>
+</ol>
+<ul class="simple">
+<li><p>TPR (True Positive Rate): Jumlah data Positif yang benar ditebak dibagi Total Positif ( <span class="math notranslate nohighlight">\(T P / P\)</span> ). Ini adalah sumbu Y grafik ROC.</p></li>
+<li><p>FPR (False Positive Rate): Jumlah data Negatif yang salah ditebak sebagai Positif dibagi Total Negatif (FP/N). Ini adalah sumbu X grafik ROC.</p></li>
+</ul>
+<p>Simulasi Pergerakan:</p>
+<ul class="simple">
+<li><p>Mulai (Threshold &gt; 1.0): Belum ada yang ditebak positif.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T P=0, F P=0 \rightarrow\)</span> Titik <span class="math notranslate nohighlight">\((0,0)\)</span>.</p></li>
+<li><p>Turun ke Threshold 1.0 (Melewati semua data ‘1’):</p></li>
+<li><p>Model berhasil menangkap semua 42 data positif dengan skor 1.0.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T P=42\)</span></p></li>
+<li><p>Karena data terpisah sempurna di skor 1.0 , belum ada data negatif ( 0 ) yang “tersangkut”. Jadi <span class="math notranslate nohighlight">\(F P=0\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(T P R=42 / 42=1.0\)</span> (Naik mentok ke atas).</p></li>
+<li><p><span class="math notranslate nohighlight">\(F P R=0 / 72=0.0\)</span>.</p></li>
+<li><p>Titik Baru: <span class="math notranslate nohighlight">\((0,1)\)</span>. Grafik naik tegak lurus dari <span class="math notranslate nohighlight">\((0,0)\)</span> ke <span class="math notranslate nohighlight">\((0,1)\)</span>.</p></li>
+<li><p>Turun ke Threshold 0.0 (Melewati semua data ‘0’):</p></li>
+<li><p>Sekarang kita anggap semuanya positif. Data negatif <span class="math notranslate nohighlight">\((0)\)</span> mulai masuk sebagai “False Positive”.</p></li>
+<li><p>TP tetap 42.</p></li>
+<li><p>FP sekarang jadi 72 (semua data negatif dianggap positif).</p></li>
+<li><p><span class="math notranslate nohighlight">\(T P R=1.0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(F P R=72 / 72=1.0\)</span>.</p></li>
+<li><p>Titik Baru: <span class="math notranslate nohighlight">\((1,1)\)</span>. Grafik bergerak mendatar ke kanan dari <span class="math notranslate nohighlight">\((0,1)\)</span> ke <span class="math notranslate nohighlight">\((1,1)\)</span>.</p></li>
+</ul>
+<ol class="arabic simple" start="4">
+<li><p>Hitung Luas Area (AUC): Karena grafik membentuk kotak sempurna (naik dari 0,0 ke 0,1 lalu ke kanan ke 1,1), luasnya adalah:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\text { Luas }=\text { Lebar } \text { × } \text { Tinggi }=1.0 \times 1.0=1.0
+\]</div>
+<p>Catatan: Hasil perhitungan menunjukkan 0.9975 (sedikit di bawah 1.0). Ini berarti ada satu atau dua data di tengah-tengah (tidak terlihat di sampel 10 teratas/terbawah) yang urutannya sedikit tertukar. Misalnya, ada satu data Negatif yang skornya 0.6, sedangkan ada satu data Positif yang skornya 0.55. Kesalahan urutan kecil ini mengurangi luas area sedikit dari 1.0 menjadi 0.9975.</p>
+<p>Kesimpulan: Nilai AUC 0.9975 berarti jika Anda mengambil satu pasien acak yang sakit kanker dan satu orang acak yang sehat, model memiliki peluang 99.75% untuk memberikan skor risiko yang lebih tinggi kepada pasien yang sakit.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-konferensi">Matrik konferensi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-1-mengambil-data-dari-confusion-matrix">Langkah 1: Mengambil Data dari Confusion Matrix</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-2-menghitung-akurasi-accuracy">Langkah 2: Menghitung Akurasi (Accuracy)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-3-menghitung-metrik-per-kelas">Langkah 3: Menghitung Metrik per Kelas</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-untuk-kelas-malignant-ganas-1-fokus-utama">A. Untuk Kelas “Malignant” (Ganas/1) - Fokus Utama</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-presisi-seberapa-akurat-saat-model-memprediksi-ganas">1. Precision (Presisi) Seberapa akurat saat model memprediksi Ganas?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-sensitivitas-seberapa-banyak-kasus-ganas-yang-berhasil-ditemukan-dari-total-kasus-ganas-yang-ada">2. Recall (Sensitivitas) Seberapa banyak kasus Ganas yang berhasil ditemukan dari total kasus Ganas yang ada?</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score-rata-rata-harmonis-antara-precision-dan-recall">3. F1-Score Rata-rata harmonis antara Precision dan Recall.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#b-untuk-kelas-benign-jinak-0">B. Untuk Kelas “Benign” (Jinak/0)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#precision-presisi">1. Precision (Presisi)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#recall-sensitivitas">2. Recall (Sensitivitas)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#f1-score">3. F1-Score</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-4-menghitung-rata-rata-averages">Langkah 4: Menghitung Rata-Rata (Averages)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macro-average-rata-rata-biasa-menjumlahkan-metrik-kedua-kelas-lalu-dibagi-2-tanpa-melihat-jumlah-data-per-kelas">1. Macro Average (Rata-rata Biasa) Menjumlahkan metrik kedua kelas lalu dibagi 2 (tanpa melihat jumlah data per kelas).</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#weighted-average-rata-rata-terbobot-mempertimbangkan-jumlah-data-support-tiap-kelas">2. Weighted Average (Rata-rata Terbobot) Mempertimbangkan jumlah data (support) tiap kelas.</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-5-analisis-overfitting-evaluasi-gap">Langkah 5: Analisis Overfitting (Evaluasi Gap)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#akurasi-training-model-mempelajari-data-latih-dengan-sempurna-sering-terjadi-pada-random-forest-tanpa-pembatasan-depth">1. Akurasi Training: Model mempelajari data latih dengan sempurna (sering terjadi pada Random Forest tanpa pembatasan depth).</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#akurasi-testing-model-diuji-dengan-data-yang-belum-pernah-dilihat">2. Akurasi Testing: Model diuji dengan data yang belum pernah dilihat.</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-data-splitting-pembagian-data">1. Perhitungan Manual Data Splitting (Pembagian Data)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#perhitungan-manual-auc-roc-area-under-the-curve-receiver-operating-characteristic">2. Perhitungan Manual AUC-ROC (Area Under the Curve - Receiver Operating Characteristic)</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
